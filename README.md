@@ -64,7 +64,7 @@ tls
 ![DNS Analysis](screenshorts/dns-resolution.jpg)
 
 ### 2. 🤝 TCP 3-Way Handshake
-![TCP Handshake](codes/tcp-handshake.jpg)
+![TCP Handshake](screenshorts/tcp-handshake.jpg)
 
 ### 3. 🔐 TLS Parameter Negotiation
 ![TLS Traffic](screenshorts/tls-negotiation.jpg)
