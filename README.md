@@ -86,28 +86,29 @@ tls.record.version == 0x0304
 
 # Filter Expert Info warnings
 expert.severity == warn
-📸 Analysis Captures
-1. 🌐 DNS Resolution Mappings
-DNS queries from 10.0.2.15 to resolver 10.2.0.1, dissecting AAAA/A record lookups for cti.wazuh.com with full flag-level breakdown of the query structure.
-�
-2. 🤝 TCP 3-Way Handshake
-Filter tcp.flags.syn == 1 isolating SYN and SYN-ACK packets. Packet 10 shows the server's SYN-ACK response from 104.21.40.220:443.
-�
-3. 🔐 TLS Cryptographic Parameter Negotiation
-TLSv1.3 stream filtered with tls, showing the full handshake sequence: Client Hello → Server Hello + Change Cipher Spec → Application Data exchange.
-�
-4. ⚠️ Expert Information Diagnostics
-Wireshark Expert Info panel revealing TCP sequence anomalies including a Connection Reset (RST) warning, partial ACKs, MSS violations, and SYN/FIN lifecycle notes.
-�
-5. 🌊 Protocol Flow Sequences
-Bidirectional waterfall flow diagram showing the complete TCP + TLSv1.3 session between 10.0.2.15:38240 and 104.21.40.220:443.
-�
-6. 📊 Volumetric I/O Graph
-I/O Graph plotting all packets per second over a 32-second capture window. Peak traffic spike of ~875 packets/sec observed at ~10s.
-�
-7. 💬 Session Conversations Tracking
-Conversations view showing 3 active TCP streams, with the heaviest stream transferring ~9.8 MB across 6,600 packets over 20 seconds.
-�
+## 📸 Analysis Captures
+
+### 1. 🌐 DNS Resolution Mappings
+![DNS Analysis](screenshorts/dns-resolution.jpg)
+
+### 2. 🤝 TCP 3-Way Handshake
+![TCP Handshake](screenshorts/tcp-handshake.jpg)
+
+### 3. 🔐 TLS Parameter Negotiation
+![TLS Traffic](screenshorts/tls-negotiation.jpg)
+
+### 4. ⚠️ Expert Information Diagnostics
+![Expert Info](screenshorts/expert-info.jpg)
+
+### 5. 📊 Volumetric I/O Graph
+![I/O Graph](screenshorts/io-graph.jpg)
+
+### 6. 🌊 Protocol Flow Sequences
+![Flow Graph](screenshorts/protocol-flow.jpg)
+
+### 7. 💬 Session Conversations
+![Conversations Tracking](screenshorts/conversations.jpg)
+ 
 📁 Repository Structure
 Wireshark-Network-Analysis/
 ├── screenshorts/         # All 7 annotated analysis captures
