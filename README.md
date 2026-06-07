@@ -2,8 +2,6 @@
 
 # 🔍 Wireshark Network Traffic Analysis & Protocol Profiling
 
-
-
 ![Wireshark](https://img.shields.io/badge/Wireshark-v4.x-1679A7?style=for-the-badge&logo=wireshark&logoColor=white)
 
 
@@ -73,11 +71,10 @@ Open a Capture File
 1.Launch Wireshark
 2.Go to File → Open
 3.Select a .pcapng file from the screenshorts/ directory
-Usage — Display Filters
+🕹️ Usage — Display Filters
 # Filter DNS traffic only
 dns
-🌊 Protocol Flow Sequences
-Bidirectional waterfall flow diagram showing the complete TCP + TLSv1.3 session between 10.0.2.15:38240 and 104.21.40.220:443.
+
 # Isolate TCP 3-way handshake (SYN packets)
 tcp.flags.syn == 1
 
@@ -92,19 +89,33 @@ expert.severity == warn
 📸 Analysis Captures
 1. 🌐 DNS Resolution Mappings
 DNS queries from 10.0.2.15 to resolver 10.2.0.1, dissecting AAAA/A record lookups for cti.wazuh.com with full flag-level breakdown of the query structure.
-2.🤝 TCP 3-Way Handshake
-Filter tcp.flags.syn == 1 isolating SYN and SYN-ACK packets. Packet 10 shows the server's SYN-ACK response from 104.21.40.220:443 — confirming stream establishment with MSS negotiation.
-3.🔐 TLS Cryptographic Parameter Negotiation
+
+
+2. 🤝 TCP 3-Way Handshake
+Filter tcp.flags.syn == 1 isolating SYN and SYN-ACK packets. Packet 10 shows the server's SYN-ACK response from 104.21.40.220:443.
+
+
+3. 🔐 TLS Cryptographic Parameter Negotiation
 TLSv1.3 stream filtered with tls, showing the full handshake sequence: Client Hello → Server Hello + Change Cipher Spec → Application Data exchange.
-4.⚠️ Expert Information Diagnostics
+
+
+4. ⚠️ Expert Information Diagnostics
 Wireshark Expert Info panel revealing TCP sequence anomalies including a Connection Reset (RST) warning, partial ACKs, MSS violations, and SYN/FIN lifecycle notes.
-5.🌊 Protocol Flow Sequences
+
+
+5. 🌊 Protocol Flow Sequences
 Bidirectional waterfall flow diagram showing the complete TCP + TLSv1.3 session between 10.0.2.15:38240 and 104.21.40.220:443.
-6.📊 Volumetric I/O Graph
+
+
+6. 📊 Volumetric I/O Graph
 I/O Graph plotting all packets per second over a 32-second capture window. Peak traffic spike of ~875 packets/sec observed at ~10s.
-7.💬 Session Conversations Tracking
+
+
+7. 💬 Session Conversations Tracking
 Conversations view showing 3 active TCP streams, with the heaviest stream transferring ~9.8 MB across 6,600 packets over 20 seconds.
-📁Repository Structure
+
+
+📁 Repository Structure
 Wireshark-Network-Analysis/
 ├── screenshorts/         # All 7 annotated analysis captures
 ├── .gitignore
@@ -115,15 +126,16 @@ Wireshark-Network-Analysis/
 Packet Dissection — Decoded OSI Layer 4 (TCP/UDP) and Layer 7 (DNS/TLS) structural headers
 Security Baseline — Differentiated between plaintext and cryptographically secured sessions
 Network Diagnostics — Identified connection dropouts, retransmissions, and anomalies via Expert Info
-Protocol Behavior — Understood full session lifecycles from handshake to teardown.
+Protocol Behavior — Understood full session lifecycles from handshake to teardown
 🔮 Future Improvements
 [ ] PyShark script to automate malformed packet detection
 [ ] GeoIP database integration to map server locations
 [ ] Custom Lua dissector for proprietary protocol decoding
-[ ] Automated report generation from .pcapng captures.
+[ ] Automated report generation from .pcapng captures
 👤 Author
 Kunal Kushwaha
 Student · Cybersecurity Intern
 (https://github.com/kunalkushwaha-tech)
+
 📄 License
 MIT License — see LICENSE for details.
