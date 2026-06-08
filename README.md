@@ -33,10 +33,12 @@ This project demonstrates hands-on network forensics using Wireshark to capture,
 ### Prerequisites
 Install [Wireshark](https://www.wireshark.org/download.html) on your local system.
 ### Clone the Repository
-```bash
-git clone https://github.com/kunalkushwaha-tech/Wireshark-Network-Analysis.git
-cd Wireshark-Network-Analysis
-Open a Capture File
+ ```bash
+ git clone [https://github.com/kunalkushwaha-tech/Wireshark-Network-Analysis.git](https://github.com/kunalkushwaha-tech/Wireshark-Network-Analysis.git)
+ cd Wireshark-Network-Analysis
+ ```
+
+ Open a Capture File
 1.Launch Wireshark
 2.Go to File → Open
 3.Select a .pcapng file from your saved
