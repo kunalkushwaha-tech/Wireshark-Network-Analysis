@@ -91,7 +91,6 @@ Wireshark-Network-Analysis/
 ├── .gitignore            # Git untracked files
 ├── LICENSE               # MIT License
 ├── README.md             # Documentation file
-└── requirements.txt      # Python dependencies
 
 🎓 Learning Outcomes
 Packet Dissection — Decoded OSI Layer 4 (TCP/UDP) and Layer 7 (DNS/TLS) structural headers
